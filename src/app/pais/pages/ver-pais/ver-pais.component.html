@@ -1,1 +1,62 @@
-<p>ver-pais works!</p>
+@if(!paisX){
+    <div class="alert alert-info">
+        Espere por favor....
+    </div>
+}@else {
+    <div class="row">
+        <div class="col-12">
+            <h1>Pais: <small>{{paisX.name.official}}</small> </h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img src="{{paisX.flags.png}}" class="small-flag">
+        </div>
+        <div class="col">
+            <h3>Información</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Población</strong> {{paisX.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Cpodigo Numerico: </strong> {{paisX.ccn3 | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Código alpha: </strong> {{paisX.cca2}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <h3>Traducciones</h3>
+    <div class="row">
+        <div class="col">
+            <span class="badge bg-primary mr-1">{{paisX.translations['ara'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['bre'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['ces'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['cym'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['deu'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['est'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['fin'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['fra'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['hrv'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['hun'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['ita'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['jpn'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['kor'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['nld'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['per'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['pol'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['por'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['rus'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['slk'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['spa'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['srp'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['swe'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['tur'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['urd'].official}}</span>
+            <span class="badge bg-primary mr-1">{{paisX.translations['zho'].official}}</span>
+        </div>
+    </div>
+}

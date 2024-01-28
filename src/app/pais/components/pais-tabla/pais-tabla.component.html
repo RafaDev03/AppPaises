@@ -18,7 +18,7 @@
                 <td>{{item.name.common}} , {{item.capital}}</td>
                 <td>{{item.population | number}}</td>
                 <td>
-                    <a [routerLink]="['/pais' , item.cca2]">Ver...</a>
+                    <button class="btn btn-warning" (click)="navigate(item.cca2)">Detalles</button>
                 </td>
             </tr>
         }
