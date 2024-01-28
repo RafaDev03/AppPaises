@@ -1,1 +1,20 @@
-<p>por-pais works!</p>
+<h2>Por pais</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-pais-imput  (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" [placeholder]="'Buscar el pais...'"/>
+    </div>
+</div>
+<hr>
+@if(hayError){
+    <div class="alert alert-danger">
+        No se encontro nada con el termino {{termino}}
+    </div>
+}
+@if(countries.length > 0){
+    <div class="row">
+        <div class="col">
+            <app-pais-tabla [pais]="countries"/>
+        </div>
+    </div>
+}
