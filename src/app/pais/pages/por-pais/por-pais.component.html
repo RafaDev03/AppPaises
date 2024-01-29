@@ -1,11 +1,26 @@
-<h2>Por pais</h2>
+<div class="animate__animated animate__fadeIn animate__faster">
+    <h2>Por pais</h2>
 <hr>
 <div class="row">
     <div class="col">
         <app-pais-imput  (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)" [placeholder]="'Buscar el pais...'"/>
     </div>
 </div>
+
+    <ul class="list-group">
+        @for (pais of paisesSugeridos; track $index) {
+            <li class="list-group-item list-group-item-action">
+                <a class="nav-link" [routerLink]="['/pais' , pais.cca2]">{{pais.name.common}}</a>       
+            </li>
+        }
+        
+        <li class="list-group-item list-group-item-action" (click)="buscarSugerido(termino)">
+            <a class="nav-link" >Buscar: {{termino}}</a>       
+        </li>
+    </ul>
 <hr>
+</div>
+
 @if(hayError){
     <div class="alert alert-danger">
         No se encontro nada con el termino {{termino}}

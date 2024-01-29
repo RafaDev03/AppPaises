@@ -1,26 +1,28 @@
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Bandera</th>
-            <th>Nombre</th>
-            <th>Población</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (item of countries; track $index) {
+<div class="animate__animated animate__fadeIn animate__faster">
+    <table class="table table-hover">
+        <thead>
             <tr>
-                <td>{{$index + 1}}</td>
-                <td>
-                    <img class="small-flag" src="{{item.flags.png}}" alt="{{item.name.official}}"> 
-                </td>
-                <td>{{item.name.common}} , {{item.capital}}</td>
-                <td>{{item.population | number}}</td>
-                <td>
-                    <button class="btn btn-warning" (click)="navigate(item.cca2)">Detalles</button>
-                </td>
+                <th>#</th>
+                <th>Bandera</th>
+                <th>Nombre</th>
+                <th>Población</th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @for (item of countries; track $index) {
+                <tr>
+                    <td>{{$index + 1}}</td>
+                    <td>
+                        <img class="small-flag" src="{{item.flags.png}}" alt="{{item.name.official}}"> 
+                    </td>
+                    <td>{{item.name.common}} , {{item.capital}}</td>
+                    <td>{{item.population | number}}</td>
+                    <td>
+                        <button class="btn btn-warning" (click)="navigate(item.cca2)">Detalles</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
